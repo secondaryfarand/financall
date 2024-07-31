@@ -1,0 +1,61 @@
+
+<div class="expenses-section">
+
+    <h2>Daftar Contact yang sudah terdaftar :</h2>
+    
+    <a href="/contact/add" class="add-button">Tambah data contact</a>
+    
+    
+    
+    <div class="table-data">
+        <div class="order">
+            <div class="head">
+                <h3>Pengeluaran Bulan Mei (-)</h3>
+                <div class="button-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-regular fa-rectangle-list"></i>
+                </div>
+            </div>
+        </div>
+        
+        <table class="table">
+            <thead>
+                <tr class="category-table">
+                    <%- include('asd') %>
+                </tr>
+            </thead>
+            <tbody class="expenses-table">     
+                <% expenses.forEach(e => { %>
+                    <tr>       
+                        <td><%= e.jenis %></td>
+                        <td><%= e.nilai %></td>
+                        <td><%= e.tanggal %></td>
+                        <td>
+                            <a href="/contact/<%= e.jenis %>" class="btn">Lihat Detail    
+                            </a>    
+                        </td>
+                    </tr>
+                <% }) %>  
+            </tbody>
+        </table>
+    </div>
+    
+    
+    <form method="post" action="/expenses">
+        <div class="form-jenis">
+            <label for="jenis">Jenis Pengeluaran</label>
+            <input type="text" name="jenis" id="jenis" placeholder="Jenis Pengeluaran" required />
+        </div>
+        <div class="form-nilai">
+            <label for="nilai">Nilai</label>
+            <input type="text" name="nilai" id="nilai" placeholder="Nilai Pengeluaran" required />
+        </div>
+        <div class="form-tanggal">
+            <label for="tanggal">Tanggal</label>
+            <input type="text" name="tanggal" id="tanggal" placeholder="Jenis Pengeluaran" required />
+        </div>
+        
+        <button type="submit"> Tambah </button>
+    </form>
+
+</div>
