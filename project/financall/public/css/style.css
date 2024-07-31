@@ -1,0 +1,88 @@
+/* -------------- CSS Reset ------------- */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font);
+    font-size: 100%;
+    /* font-size: 52px; */
+    /* color: white; */
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+/* color pallete */
+:root {
+    --background: #fefae0;
+    /* --background: #fefae0; */
+    --wings: rgb(218, 183, 27);
+    --wingsActivated: rgb(156, 148, 113);
+    --primary: #ddb23d;
+    /* --primary: #c7ad57; */
+    --secondary: rgb(222, 255, 102);
+    --footer: #a84040;
+    --content: #152238;
+    --content-2: rgb(235, 235, 235);
+    /* --content-2: rgb(240, 240, 240); */
+
+
+    --font: 'Poppins';
+}
+
+body {
+    /* font-family: var(--font); */
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+
+    line-height: 90%;
+    letter-spacing: -2px;
+}
+h2 {
+    font-weight: 300;
+    font-size: 2.4rem;
+}
+h3 {
+    font-weight: 300;
+    font-size: 1.4rem;
+    color: red;
+}
+p {
+    color: #777;
+    font-size: 14px;
+    font-weight: 300px;
+    line-height: 22px;
+    padding: 10px;
+}
+
+/* NAVBAR */
+nav {
+    padding:  0.8rem 1.4rem;
+    min-height: 10vh;
+    justify-content: space-between;
+    display: flex;
+    background-color: greenyellow;
+}
+
+h6 {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: goldenrod;
+}
+
+@media(max-width: 700px) {
+
+}
+
+
+/* content below */
+.expenses-section {
+    margin: 2rem 5rem;
+    min-height: 80vh;
+}
+@media(max-width: 700px) {
+    .expenses-section {
+        margin: 2rem 1.5rem;
+    }    
+}

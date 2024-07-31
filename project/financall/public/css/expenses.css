@@ -1,0 +1,78 @@
+
+@media(max-width: 700px) {
+    .table-data  {
+        overflow-x: scroll;
+        scrollbar-width: none;
+        width: 100%;
+    }
+    .order {
+        width: 40rem;
+    }
+    .table-data table tbody tr td:nth-child(2) , .order table thead tr th:nth-child(2){
+        min-width: 9rem;
+    } 
+
+    .table-data .table {
+        min-width: 40rem;
+    }
+    /* .expenses-section form {
+        overflow-x: hidden;
+    }  */
+      
+}
+
+
+.table-data {
+    margin: 0;
+    width: 100%;
+    
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    border-radius: 20px;
+    
+}
+
+.order {
+    
+}
+
+.table-data .order .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.table-data .table {
+    width: 100%;
+    /* background-color: rgb(150, 44, 44); */
+    border-collapse:collapse;
+}
+
+.table-data .head i {
+    color: rgb(0, 0, 0);
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    cursor: pointer;
+    
+}
+
+.table-data table th {
+    font-size: 16px;
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+.table-data table td, table th  {
+    /* border: 1px solid black; */
+    padding: 1rem 0 1rem 1rem;
+    
+    font-size: 15px;
+    font-weight: 300px;
+    text-align: left;
+    /* color: #777; */
+}
+.table-data .order table tbody tr:hover {
+    background-color: rgb(247, 247, 247);
+}
+
+
