@@ -1,5 +1,5 @@
-// const mongoose = require('mongoose');
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+// import mongoose from 'mongoose';
 
 // Membuat Schema 
 const Expenses = mongoose.model('Expenses', {

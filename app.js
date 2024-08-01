@@ -1,13 +1,13 @@
-// const express = require('express');
-// const expressLayouts = require('express-ejs-layouts');
-import express from 'express';
-import expressLayouts from 'express-ejs-layouts';
+const express = require('express');
+const expressLayouts = require('express-ejs-layouts');
+// import express from 'express';
+// import expressLayouts from 'express-ejs-layouts';
 
 // Databases
-// require('./utils/db')
-// const Expenses = require('./model/data')
-import './utils/db';
-import Expenses from './model/data'; 
+require('./utils/db')
+const Expenses = require('./model/data')
+// import 'utils/db';
+// import { Expenses } from './model/data/Expenses'; 
 
 // Porting
 const app = express();
