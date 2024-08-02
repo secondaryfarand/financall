@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
         nama : 'Farand Darmika',
         title : 'Financall',
         mahasiswa, 
-        layout : 'views/layouts/main-layout'
+        layout : __dirname + '/views/layouts/main-layout'
     })
 });
 
@@ -59,7 +59,7 @@ app.get('/expenses' , async (req, res) => {
     }
     res.render(__dirname + '/views/expenses', { 
         // layout : 'layouts/main-layout',
-        layout  : 'views/layouts/main-layout',
+        layout  : __dirname + '/views/layouts/main-layout',
         title : 'Halaman Contact',
         expenses,
         category
