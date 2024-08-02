@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
             kelas : 'enam'
         },
     ]; 
-    res.render(__dirname + '/views/index.ejs', {
+    res.render(__dirname + '/views/index', {
         nama : 'Farand Darmika',
         title : 'Financall',
         mahasiswa, 
