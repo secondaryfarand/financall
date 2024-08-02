@@ -19,6 +19,11 @@ app.use(expressLayouts)
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
+// Package Path
+// const path = require('path');
+// const viewspath = path.join(__dirname, '../views');
+// app.set('view', viewspath);
+
 // Halaman Home
 app.get('/', (req, res) => {
     const mahasiswa = [
@@ -35,7 +40,7 @@ app.get('/', (req, res) => {
             kelas : 'enam'
         },
     ]; 
-    res.render('index.ejs', {
+    res.render(__dirname + '/views/index.ejs', {
         nama : 'Farand Darmika',
         title : 'Financall',
         mahasiswa, 
@@ -75,5 +80,6 @@ app.post(
 app.listen(port, () => {
     console.log(`Financall | Listening at http://localhost:${port}`)
     console.log(`hey`)
+    console.log(__dirname + '/views/index.ejs')
 });
   
