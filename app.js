@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
             kelas : 'enam'
         },
     ]; 
-    res.render('index', {
+    res.render('index.ejs', {
         nama : 'Farand Darmika',
         title : 'Financall',
         mahasiswa, 
