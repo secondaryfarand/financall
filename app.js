@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
         nama : 'Farand Darmika',
         title : 'Financall',
         mahasiswa, 
-        layout : 'layouts/main-layout'
+        layout : __dirname + '/views/layouts/main-layout'
     })
 });
 
