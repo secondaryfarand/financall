@@ -57,8 +57,9 @@ app.get('/expenses' , async (req, res) => {
         category3 : "Tanggal",
         category4 : "Estimasi"
     }
-    res.render('expenses', { 
-        layout : 'layouts/main-layout',
+    res.render(__dirname + '/views/expenses', { 
+        // layout : 'layouts/main-layout',
+        layout  : __dirname + '/views/layouts/main-layout',
         title : 'Halaman Contact',
         expenses,
         category
@@ -81,5 +82,6 @@ app.listen(port, () => {
     console.log(`Financall | Listening at http://localhost:${port}`)
     console.log(`hey`)
     console.log(__dirname + '/views/index.ejs')
+    console.log(__dirname + '/views/layouts/main-layout')
 });
   
