@@ -29,32 +29,32 @@ app.use(express.static(__dirname + 'public'));
 // app.set('view', viewspath);
 
 // Halaman Home
-app.get('/', (req, res) => {
-    const mahasiswa = [
-        {
-            nama : 'abdul',
-            kelas : 'satu'
-        },
-        {
-            nama : 'aziz',
-            kelas : 'empat'
-        },
-        {
-            nama : 'amir',
-            kelas : 'enam'
-        },
-    ]; 
+// app.get('/', (req, res) => {
+//     const mahasiswa = [
+//         {
+//             nama : 'abdul',
+//             kelas : 'satu'
+//         },
+//         {
+//             nama : 'aziz',
+//             kelas : 'empat'
+//         },
+//         {
+//             nama : 'amir',
+//             kelas : 'enam'
+//         },
+//     ]; 
    
-    res.render(__dirname + '/views/index', {
-        nama : 'Farand Darmika',
-        title : 'Financall',
-        mahasiswa, 
-        layout : 'layouts/main-layout'
-    })
-});
+//     res.render(__dirname + '/views/index', {
+//         nama : 'Farand Darmika',
+//         title : 'Financall',
+//         mahasiswa, 
+//         layout : 'layouts/main-layout'
+//     })
+// });
 
 // halaman pengeluaran
-app.get('/expenses' , async (req, res) => {
+app.get('/' , async (req, res) => {
     const expenses = await Expenses.find()
     const category = {
         category1 : "Jenis Pengeluaran",
@@ -74,7 +74,7 @@ app.get('/expenses' , async (req, res) => {
 })
  
 app.post(
-    '/expenses' ,(req, res) => {
+    '/' ,(req, res) => {
         // console.log(req.body);
         // res.send(req.body);
         Expenses.insertMany(req.body)
