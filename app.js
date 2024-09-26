@@ -9,6 +9,24 @@ const Expenses = require('./model/data')
 // import 'utils/db';
 // import { Expenses } from './model/data/Expenses'; 
 
+const mongoose = require('mongoose')
+const DB_URI = 'mongodb://127.0.0.1:27017/Financall'
+// const DB_URI = 'mongodb+srv://gambitmenteri8:FFAuV9IraKYa7bJu@financall.fuuev.mongodb.net/?retryWrites=true&w=majority&appName=Financall'
+
+// const connectionParams = {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// }
+
+
+
+// mongoose.connect(DB_URI, connectionParams).then(()=> {
+//     console.info("Connected to the MongoDB");
+// }).catch((e)=> {
+//     console.log("Error : " , e);
+// });
+
+
 // Porting
 const app = express();
 const port = 3000; 
@@ -29,32 +47,32 @@ app.use(express.static(__dirname + 'public'));
 // app.set('view', viewspath);
 
 // Halaman Home
-// app.get('/', (req, res) => {
-//     const mahasiswa = [
-//         {
-//             nama : 'abdul',
-//             kelas : 'satu'
-//         },
-//         {
-//             nama : 'aziz',
-//             kelas : 'empat'
-//         },
-//         {
-//             nama : 'amir',
-//             kelas : 'enam'
-//         },
-//     ]; 
+app.get('/', (req, res) => {
+    const mahasiswa = [
+        {
+            nama : 'abdul',
+            kelas : 'satu'
+        },
+        {
+            nama : 'aziz',
+            kelas : 'empat'
+        },
+        {
+            nama : 'amir',
+            kelas : 'enam'
+        },
+    ]; 
    
-//     res.render(__dirname + '/views/index', {
-//         nama : 'Farand Darmika',
-//         title : 'Financall',
-//         mahasiswa, 
-//         layout : 'layouts/main-layout'
-//     })
-// });
+    res.render(__dirname + '/views/index', {
+        nama : 'Farand Darmika',
+        title : 'Financall',
+        mahasiswa, 
+        layout : 'layouts/main-layout'
+    })
+});
 
 // halaman pengeluaran
-app.get('/' , async (req, res) => {
+app.get('/expenses' , async (req, res) => {
     const expenses = await Expenses.find()
     const category = {
         category1 : "Jenis Pengeluaran",
@@ -70,11 +88,11 @@ app.get('/' , async (req, res) => {
         category
         // msg: req.flash('msg'),
       })
-    // console.log(expenses)
+    console.log(expenses)
 })
  
 app.post(
-    '/' ,(req, res) => {
+    '/expenses' ,(req, res) => {
         // console.log(req.body);
         // res.send(req.body);
         Expenses.insertMany(req.body)
