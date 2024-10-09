@@ -9,6 +9,24 @@ const Expenses = require('./model/data')
 // import 'utils/db';
 // import { Expenses } from './model/data/Expenses'; 
 
+const mongoose = require('mongoose')
+const DB_URI = 'mongodb://127.0.0.1:27017/Financall'
+// const DB_URI = 'mongodb+srv://gambitmenteri8:FFAuV9IraKYa7bJu@financall.fuuev.mongodb.net/?retryWrites=true&w=majority&appName=Financall'
+
+// const connectionParams = {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// }
+
+
+
+// mongoose.connect(DB_URI, connectionParams).then(()=> {
+//     console.info("Connected to the MongoDB");
+// }).catch((e)=> {
+//     console.log("Error : " , e);
+// });
+
+
 // Porting
 const app = express();
 const port = 3000; 
@@ -16,12 +34,12 @@ const port = 3000;
 // Setup view engine EJS
 // app.set('view engine', 'ejs');
 app.use(expressLayouts) 
-// app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 // saran dari stackoverflow
 app.set("views", __dirname  + "/views");
 app.set('view engine', 'ejs');
-app.use(express.static(__dirname + 'public'));
+// app.use(express.static(__dirname + 'public'));
+app.use(express.static('public'));
 
 // Package Path
 // const path = require('path');
@@ -70,7 +88,7 @@ app.get('/expenses' , async (req, res) => {
         category
         // msg: req.flash('msg'),
       })
-    // console.log(expenses)
+    console.log(expenses)
 })
  
 app.post(
