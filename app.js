@@ -34,12 +34,12 @@ const port = 3000;
 // Setup view engine EJS
 // app.set('view engine', 'ejs');
 app.use(expressLayouts) 
-// app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 // saran dari stackoverflow
 app.set("views", __dirname  + "/views");
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + 'public'));
+// app.use(express.static('public'));
 
 // Package Path
 // const path = require('path');
