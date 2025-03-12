@@ -8,8 +8,8 @@ const database = process.env.DB_URI ||'mongodb+srv://gambitmenteri8:FFAuV9IraKYa
 
 
 mongoose.connect(database, {
-    useUnifiedTopology : True,
-    useNewUrlParser : True,
+    // useUnifiedTopology : true,
+    // useNewUrlParser : true,
 });
 
 mongoose.connection.on("connected", ()=> {
